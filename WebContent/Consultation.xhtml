@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head></h:head>
+<h:body>
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="80">
+
+<h:outputText value="Bienvenue dns notre application" />
+	
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="100">
+			<h:outputText value="Copyright 2012." />
+		</p:layoutUnit>
+		<p:layoutUnit position="west" size="200"
+			style="width:200;border-width:1px;">
+			 Hello to primefaces template 
+		</p:layoutUnit>
+		<p:layoutUnit position="east" size="200"
+			style="width:200;border-width:1px;">
+       
+		</p:layoutUnit>
+		<p:layoutUnit position="center" style="width:200; border-width:0px;">
+		<h:form>
+		<p:dataTable value="#{clientManagedBean.lisclients}" var="clt" selection="#{clientManagedBean.selectedClient}" selectionMode="single" rowKey="#{clt.idclient}">
+		<p:column headerText="idclt" >
+		<h:outputText value="#{clt.idclient}" />  </p:column>
+		<p:column headerText="nom" >
+		<h:outputText value="#{clt.nom}" />  </p:column>
+		<p:column headerText="prenom" >
+		<h:outputText value="#{clt.prenom}" />  </p:column>
+		<p:column headerText="tel" >
+		<h:outputText value="#{clt.tel}" />  </p:column>
+		<p:column headerText="adress" >
+		<h:outputText value="#{clt.adress}" />  </p:column>
+		
+		<p:column headerText="suppression" >
+		<p:commandButton value="X" actionListener="#{clientManagedBean.supp}" /></p:column>
+		
+		</p:dataTable>
+		</h:form>
+		</p:layoutUnit>
+	</p:layout>
+
+
+</h:body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
